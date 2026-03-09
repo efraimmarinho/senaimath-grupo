@@ -29,3 +29,32 @@ def PiValue(x): #X =  A numero de termos, quanto mais tiver mais preciso o resul
 ntermos = int(input("Insira o numero de termos que vc deseja: ")) #usuario esoclher o tanto de termos
 
 print(PiValue(ntermos)) #print valor de pi
+
+
+#/
+
+def fatorial(x):
+
+    resultado = 1
+    for i in range(1, x + 1):
+        resultado *= i
+
+    return resultado
+
+
+def cosseno(y, termos=20):
+
+    resultado = 0
+
+    for x in range(termos):
+        conta = (-1) ** x
+        resultado += conta * (y ** (2 * x)) / fatorial(2 * x)
+
+    return resultado
+
+
+valor = int(input('Digite o valor desejado em graus: '))
+
+radiano = valor * 0.0174533
+
+print(cosseno(radiano))
